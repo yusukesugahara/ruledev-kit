@@ -1,15 +1,36 @@
 {
   "name": "ruledev-kit",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "version": "0.1.0",
+  "description": "Rules as Code toolkit for AI-driven development",
+  "type": "module",
+  "bin": {
+    "rbd": "./dist/cli.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "main": "./dist/cli.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "tsx src/cli.ts",
+    "build": "tsc",
+    "check": "tsc --noEmit",
+    "test": "vitest",
+    "prepublishOnly": "npm run check && npm run build && npm test"
+  },
+  "keywords": [
+    "ai",
+    "coding-agent",
+    "rules-as-code",
+    "agents-md",
+    "codex",
+    "claude",
+    "copilot",
+    "developer-tools"
+  ],
+  "author": "Yusuke Sugahara",
+  "license": "MIT",
   "dependencies": {
     "commander": "^15.0.0",
     "fast-glob": "^3.3.3",

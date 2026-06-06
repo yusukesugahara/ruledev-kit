@@ -1,0 +1,15 @@
+id: nextjs.no-client-fetch
+title: Client Componentで直接fetchしない
+category: frontend
+severity: error
+instruction: |
+  データ取得は Server Component、page.tsx、actions.ts に集約してください。
+  Client Component 内で直接 fetch を呼ばないでください。
+check:
+  type: text
+  include:
+    - "app/**/*.tsx"
+    - "src/**/*.tsx"
+  pattern:
+    - "useEffect"
+    - "fetch("
