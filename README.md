@@ -20,24 +20,29 @@ The goal is to make AI-driven development more reliable, repeatable, and rule-ba
 
 - Define project rules in `.rules/rules/*.yml`
 - Generate `AGENTS.md` for AI coding agents
+- Generate AI instruction files to a custom output path
 - Check source files against simple rule definitions
 - Support repeatable AI-driven development workflows
 - Prepare a foundation for future CI and review automation
 
 ## Installation
 
-For local development:
+Install globally from npm:
 
 ```bash
-npm install
-npm run build
-npm link
+npm install -g ruledev-kit
 ```
 
-After linking, the `ruledev` command becomes available locally:
+After installation, the `ruledev` command becomes available:
 
 ```bash
 ruledev --help
+```
+
+You can also run it without global installation:
+
+```bash
+npx ruledev-kit --help
 ```
 
 ## Usage
@@ -153,15 +158,34 @@ Follow these rules when modifying this repository.
 ```bash
 ruledev init
 ruledev compile
+ruledev compile --out examples/basic/AGENTS.md
 ruledev check
 ```
 
 ## Development
 
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/yusukesugahara/ruledev-kit.git
+cd ruledev-kit
+npm install
+```
+
+Run checks:
+
 ```bash
 npm run check
 npm run build
 npm test
+```
+
+Use the local CLI during development:
+
+```bash
+npm run build
+npm link
+ruledev --help
 ```
 
 ## Project Structure
@@ -176,6 +200,18 @@ src/
 └── core/
     ├── load-rules.ts
     └── render-agents.ts
+```
+
+## Development AGENTS.md
+
+The root `AGENTS.md` is used as a development guide for AI agents working on this repository.
+
+Do not overwrite it with generated output.
+
+When testing generated instructions, use:
+
+```bash
+ruledev compile --out examples/basic/AGENTS.md
 ```
 
 ## Roadmap
