@@ -15,6 +15,7 @@ program
 program
     .command("compile")
     .description("Compile rules into AI instruction files")
+    .option("-o, --out <path>", "Output file path", "AGENTS.md")
     .action(compileCommand);
 program
     .command("check")
