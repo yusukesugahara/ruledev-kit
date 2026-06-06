@@ -68,6 +68,16 @@ Compile YAML rule definitions into an AI-readable `AGENTS.md` file:
 ruledev compile
 ```
 
+### Generate AGENTS.md to a custom path
+
+By default, `ruledev compile` generates `AGENTS.md` in the current directory.
+
+To avoid overwriting an existing development guide, use `--out`:
+
+```bash
+ruledev compile --out examples/basic/AGENTS.md
+```
+
 ### Check rule violations
 
 Check source files against rule definitions:
