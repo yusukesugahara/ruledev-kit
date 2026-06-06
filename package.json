@@ -4,7 +4,7 @@
   "description": "Rules as Code toolkit for AI-driven development",
   "type": "module",
   "bin": {
-    "rbd": "./dist/cli.js"
+    "ruledev": "./dist/cli.js"
   },
   "main": "./dist/cli.js",
   "files": [
@@ -16,7 +16,7 @@
     "dev": "tsx src/cli.ts",
     "build": "tsc",
     "check": "tsc --noEmit",
-    "test": "vitest",
+    "test": "vitest run --passWithNoTests",
     "prepublishOnly": "npm run check && npm run build && npm test"
   },
   "keywords": [

@@ -8,16 +8,9 @@ import { checkCommand } from "./commands/check.js";
 const program = new Command();
 
 program
-  .name("rbd")
+  .name("ruledev")
   .description("Rules as Code toolkit for AI-driven development")
   .version("0.1.0");
-
-program
-  .command("hello")
-  .description("Check that the CLI works")
-  .action(() => {
-    console.log("Hello from RuleDev Kit");
-  });
 
 program
   .command("init")
