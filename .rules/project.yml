@@ -1,0 +1,4 @@
+name: ruledev-project
+description: AI-driven development rules
+targets:
+  - codex

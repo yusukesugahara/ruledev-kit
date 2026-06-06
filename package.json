@@ -1,0 +1,46 @@
+{
+  "name": "ruledev-kit",
+  "version": "0.1.0",
+  "description": "Rules as Code toolkit for AI-driven development",
+  "type": "module",
+  "bin": {
+    "ruledev": "./dist/cli.js"
+  },
+  "main": "./dist/cli.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "tsx src/cli.ts",
+    "build": "tsc",
+    "check": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "prepublishOnly": "npm run check && npm run build && npm test"
+  },
+  "keywords": [
+    "ai",
+    "coding-agent",
+    "rules-as-code",
+    "agents-md",
+    "codex",
+    "claude",
+    "copilot",
+    "developer-tools"
+  ],
+  "author": "Yusuke Sugahara",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^15.0.0",
+    "fast-glob": "^3.3.3",
+    "picocolors": "^1.1.1",
+    "yaml": "^2.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.2",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.8"
+  }
+}
